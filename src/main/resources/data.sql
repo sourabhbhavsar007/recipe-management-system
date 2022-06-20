@@ -1,0 +1,4 @@
+insert into recipe (id, name, isVegetarian, serves, instructions, lastUpdated, ingredients) values (1, 'Kibbeling', false, 2, 'Preheat the oven and deep fry cod fish','2022-01-03 22:20:05.26', 'Fish, oil, pepper');
+insert into recipe (id, name, isVegetarian, serves, instructions, lastUpdated, ingredients) values (2, 'Pizza', false, 3, 'Mix vegetables and heat the dough','2022-02-06 23:30:05.26', 'Dough, chicken, chilly');
+insert into recipe (id, name, isVegetarian, serves, instructions, lastUpdated, ingredients) values (3, 'Salad', true, 4, 'Mix vegetables','2022-05-06 21:30:05.26', 'Spinach, brocolli');
+insert into recipe (id, name, isVegetarian, serves, instructions, lastUpdated, ingredients) values (4, 'Burger', true, 5, 'Mix patty with dough','2022-05-06 20:40:05.26', 'Bread, butter, mushroom');
