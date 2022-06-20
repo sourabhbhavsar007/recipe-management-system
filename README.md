@@ -21,7 +21,7 @@ For example, the API should be able to handle the following search requests:
 ## Project Specifications :
 This is a Spring Boot application and we have implemented a web service that has endpoints to perform CRUD operations on recipes and also have advanced search capabilities.
 
-### Note: For the advanced search Querydsl or @Query annotation with native SQL queries can be also used. We are currently leveraging Specifications along with Spring Data JpaSpecificationExecutor for our criteria based search.
+#### Note: For the advanced search Querydsl or @Query annotation with native SQL queries can be also used. We are currently leveraging Specifications along with Spring Data JpaSpecificationExecutor for our criteria based search.
 
 ## System Design:
 Recipe Management Service is microservice based on layered architecture and is a RESTful Web Service. This service can be deployed independently on premise or on cloud and can also be containerized to execute as docker containers. There are 4 layers from top to bottom:
@@ -69,6 +69,11 @@ Application is using in memory H2 database. The connection details are :
 
 # Endpoints:
 
+Please refer to the following link for documentation realted to endpoints along with sample payload :
+
+### https://documenter.getpostman.com/view/6488957/UzBnpkqd#2e5efc03-8d17-4568-a0f3-4e4523932727
+
+Alternatively, please also find enpoints details below as well.
 
 - Get All Recipes
 	- Get all recipe service is used to get list of all the recipes. Following is the api endpoint. It is GET request. 
@@ -147,7 +152,7 @@ Application is using in memory H2 database. The connection details are :
 		- isVegetarian:true means all the recipes which are vegetarian.
 		- serves>5 fetches the recipes which can be served to more than 5 person.
 ```
-	GET localhost:8888/api/v1/recipe/searchByCriteria/isVegetarian:false,'serves>8,'ingredients==salmon
+	GET localhost:8888/api/v1/recipe/searchByCriteria/isVegetarian:false,'serves>8,'ingredients:salmon
 ```
 
 
