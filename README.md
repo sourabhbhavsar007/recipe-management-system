@@ -178,3 +178,5 @@ Application is using in memory H2 database. The connection details are :
 Security is not implemented, we can implement Security using Spring Security, etc.
 
 Code coverage is not considered for model classes.
+
+Can be containerised, deployed on cloud and leverage cloud capabilities like auto-scaling, resiliency, monitoring, etc.
