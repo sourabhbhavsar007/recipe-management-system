@@ -1,6 +1,6 @@
-# recipe-management-system
+# recipe-management-service
 
-# Spring Boot Project for Recipe Management System
+# Spring Boot Project for Recipe Management Service
 
 ## Business Requirements :
 
