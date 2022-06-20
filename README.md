@@ -52,7 +52,7 @@ Import the unziped file or cloned repo into IDE of your choice.
 
 Run mvn clean install to build and resolve dependencies needed for the application.
 
-After build is successful, you can use above endpoints with respective authorization credentials and request payload on Postman.
+After build is successful, you can use mvn spring-boot:run or run method of RecipeManagementServiceApplication class. You can then use above endpoints with respective request payload on Postman.
 
 Port : By default application runs on port 8888 . Kindly make sure the port is available.
 
