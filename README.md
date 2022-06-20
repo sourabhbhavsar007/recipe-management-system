@@ -21,7 +21,7 @@ For example, the API should be able to handle the following search requests:
 ## Project Specifications :
 This is a Spring Boot application and we have implemented a web service that has endpoints to perform CRUD operations on recipes and also have advanced search capabilities.
 
-## Note: For the advanced search Querydsl or @Query annotation with native SQL queries can be also used. We are currently leveraging Specifications along with Spring Data JpaSpecificationExecutor for our criteria based search.
+### Note: For the advanced search Querydsl or @Query annotation with native SQL queries can be also used. We are currently leveraging Specifications along with Spring Data JpaSpecificationExecutor for our criteria based search.
 
 ## System Design:
 Recipe Management Service is microservice based on layered architecture and is a RESTful Web Service. This service can be deployed independently on premise or on cloud and can also be containerized to execute as docker containers. There are 4 layers from top to bottom:
@@ -33,7 +33,7 @@ Top layer, which is main interface available for intgeration and interaction wit
 This layer sits in between API layer and Data access layer with some utility functionality and business logic.
 It's mainly responsible for interacting with Data Access Layer and transferring the recipes data as required by top and below layers.
 It's just another module added to decouple business logic of recipes data transfer and mapping from/to API layer.
-Further, service layer can be enhanced to support advanved features like Caching, Interacting with external Authorization Service etc. (Future scope)
+Further, service layer can be enhanced to support advanced features like caching, etc.
 
 ## Data Access Layer:
 Responsible to provide Object Relationship Mapping (ORM) between higher level recipe Java objects and persistence layer tables.
@@ -71,7 +71,7 @@ Application is using in memory H2 database. The connection details are :
 
 
 - Get All Recipes
-	- Get all recipe service is used to get list of all the recipes. Following is the api url. It is GET request. 
+Get all recipe service is used to get list of all the recipes. Following is the api url. It is GET request. 
 
 ```
 		GET 
