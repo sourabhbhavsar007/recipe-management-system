@@ -54,18 +54,18 @@ Run mvn clean install to build and resolve dependencies needed for the applicati
 
 After build is successful, you can use above endpoints with respective authorization credentials and request payload on Postman.
 
-Port : By default application runs on port 8080 . Kindly make sure the port is available.
+Port : By default application runs on port 8888 . Kindly make sure the port is available.
 
 Security : Currently no security is configured , so no need for any HTTP Basic or Transport layer security.
 
 Application is using in memory H2 database. The connection details are : 
-- `http://localhost:8080`
+- `http://localhost:8888`
 - spring.datasource.url=jdbc:h2:file:./data/demo
 - spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 - spring.datasource.driverClassName = org.h2.Driver
 - spring.datasource.platform=h2
-- spring.datasource.username = sa
-- spring.datasource.password =
+- spring.datasource.username=root
+- spring.datasource.password=root
 
 # Endpoints:
 
@@ -74,9 +74,7 @@ Application is using in memory H2 database. The connection details are :
 	- Get all recipe service is used to get list of all the recipes. Following is the api endpoint. It is GET request. 
 
 ```
-		GET 
-		'Accept: application/json' 
-		'/api/v1/recipe/'
+		GET localhost:8888/api/v1/recipe/
 
 ```
 
@@ -84,9 +82,7 @@ Application is using in memory H2 database. The connection details are :
 	- Find the recipe by id can be used to fetch particular Recipe. Following is the api endpoint. It is GET request which accept ID as path parameter.
 	
 ```	
-		GET 
-		'Accept: application/json' 
-		'/api/v1/recipe/{id}'
+		GET /api/v1/recipe/{id}
 
 ```
 	
@@ -94,61 +90,45 @@ Application is using in memory H2 database. The connection details are :
 	- Delete the recipe by Id can be used to delete matching Recipe. Following is the api endpoint. It is DELETE request which accept Id as path parameter.
 	
 ```	
-		GET 
-		'Accept: application/json' 
-		'/api/v1/recipe/{id}'
+		GET /api/v1/recipe/{id}
 
 ```
 
 
 - Add Recipe
-	- Adds new recipe. Following is the api endpoint and sample json. It is POST request which accepts JSON body for recipe.
+	- Adds new recipe. Following is the api endpoint and sample json. It is POST request which accepts JSON payload for recipe.
 
 ```
-		POST 
-		'Content-Type: application/json'
-		'/api/v1/recipe/'
+		POST /api/v1/recipe/
 		
-		'Accept: application/json' -d 
-		'{ \ 
-		   "cookingInstruction": "string", \ 
-		   "ingredients": [ \ 
-		     { \ 
-		       "ingredientDesciption": "string", \ 
-		       "ingredientName": "string" \ 
-		     } \ 
-		   ], \ 
-		   "name": "string", \ 
-		   "numberOfPerson": 0, \ 
-		   "vegetarian": true \ 
-		}' 
+		{
+        		"id": 2,
+        		"name": "Kibbeling",
+        		"serves": 5,
+        		"instructions": "Deep fry cod fish, add pepper",
+        		"ingredients": "fish, oil, pepper",
+        		"lastUpdated": "2022-06-05T23:23:06.000+00:00",
+        		"vegetarian": false
+    		}
+		 
 		
 	
 ```
 - Update Recipe
-	- Update recipe service is used to update existing recipe. Following is the api endpoint and sample json. It is PUT request which accept JSON body for recipe alongwith ID as path parameter. 
+	- Update recipe service is used to update existing recipe. It accepts JSON payload of updated recipe with its Id as Path variable. 
 	
 ```
-		PUT 
-		'Content-Type: application/json' 
-		'/api/v1/recipe/{id}'
+		PUT /api/v1/recipe/{id}
 		
-		'Accept: application/json' -d 
-		'{ \ 
-		   "id": 5, \ 
-		   "name": "string test", \ 
-		   "createDate": "2020-10-26 13:26", \ 
-		   "numberOfPerson": 0, \ 
-		   "cookingInstruction": "string", \ 
-		   "ingredients": [ \ 
-		     { \ 
-		       "id": 10, \ 
-		       "ingredientName": "string", \ 
-		       "ingredientDesciption": "string" \ 
-		     } \ 
-		   ], \ 
-		   "vegetarian": true \ 
-		}'	 
+		{
+        		"id": 2,
+        		"name": "Kibbeling",
+        		"serves": 4,
+        		"instructions": "Deep fry cod fish, add pepper",
+        		"ingredients": "fish, oil, pepper",
+        		"lastUpdated": "2022-06-05T23:23:06.000+00:00",
+        		"vegetarian": false
+   		 }	 
 		
 
 ```
@@ -167,9 +147,7 @@ Application is using in memory H2 database. The connection details are :
 		- isVegetarian:true means all the recipes which are vegetarian.
 		- serves>5 fetches the recipes which can be served to more than 5 person.
 ```
-	GET 
-	'Accept: application/json' 
-	'/api/v1/recipe/searchRecipeByCriteria/isVegetarian%3Atrue'
+	GET localhost:8888/api/v1/recipe/searchByCriteria/isVegetarian:false,'serves>8,'ingredients==salmon
 ```
 
 
