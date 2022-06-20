@@ -156,6 +156,26 @@ Alternatively, please also find enpoints details below as well.
 ```
 
 
+## Screenshots:
+
+1. Get All Recipes Reponse:
+
+![Screen Shot 2022-06-20 at 8 52 30 PM](https://user-images.githubusercontent.com/30754286/174682542-fe1579c3-ba37-4584-9fd7-6f4c74f8c8bc.png)
+
+
+2. Find recipe based on search criteria:
+
+![Screen Shot 2022-06-20 at 8 59 06 PM](https://user-images.githubusercontent.com/30754286/174682762-f4501d9e-cdff-470a-9e67-8dee855cfc8d.png)
+
+
+
+3. Database table of Recipe:
+
+![Screen Shot 2022-06-20 at 9 04 44 PM](https://user-images.githubusercontent.com/30754286/174682793-7ed2c6c8-b34c-4b9e-8978-df0c74cf0738.png)
+
+
+
+
 ## Limitations:
 
 Security is not implemented, we can implement Security using Spring Security, etc.
