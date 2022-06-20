@@ -71,7 +71,7 @@ Application is using in memory H2 database. The connection details are :
 
 
 - Get All Recipes
-Get all recipe service is used to get list of all the recipes. Following is the api url. It is GET request. 
+	- Get all recipe service is used to get list of all the recipes. Following is the api endpoint. It is GET request. 
 
 ```
 		GET 
@@ -81,7 +81,7 @@ Get all recipe service is used to get list of all the recipes. Following is the 
 ```
 
 - Find Recipe By Id
-	- Find the recipe by id can be used to fetch particular Recipe. Following is the api url. It is GET request which accept ID as path parameter.
+	- Find the recipe by id can be used to fetch particular Recipe. Following is the api endpoint. It is GET request which accept ID as path parameter.
 	
 ```	
 		GET 
@@ -91,7 +91,7 @@ Get all recipe service is used to get list of all the recipes. Following is the 
 ```
 	
 - Delete Recipe By Id
-	- Delete the recipe by id can be used to delete particular Recipe. Following is the api url. It is DELETE request which accept ID as path parameter.
+	- Delete the recipe by Id can be used to delete matching Recipe. Following is the api endpoint. It is DELETE request which accept Id as path parameter.
 	
 ```	
 		GET 
@@ -101,8 +101,8 @@ Get all recipe service is used to get list of all the recipes. Following is the 
 ```
 
 
-- Create Recipe
-	- Create recipe service is used to create new recipe. Following is the api url and sample json. It is POST request which accepts JSON body for recipe.
+- Add Recipe
+	- Adds new recipe. Following is the api endpoint and sample json. It is POST request which accepts JSON body for recipe.
 
 ```
 		POST 
@@ -126,7 +126,7 @@ Get all recipe service is used to get list of all the recipes. Following is the 
 	
 ```
 - Update Recipe
-	- Update recipe service is used to update existing recipe. Following is the api url and sample json. It is PUT request which accept JSON body for recipe alongwith ID as path parameter. 
+	- Update recipe service is used to update existing recipe. Following is the api endpoint and sample json. It is PUT request which accept JSON body for recipe alongwith ID as path parameter. 
 	
 ```
 		PUT 
