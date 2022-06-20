@@ -59,7 +59,7 @@ Port : By default application runs on port 8080 . Kindly make sure the port is a
 Security : Currently no security is configured , so no need for any HTTP Basic or Transport layer security.
 
 Application is using in memory H2 database. The connection details are : 
-- `http://localhost:8882`
+- `http://localhost:8080`
 - spring.datasource.url=jdbc:h2:file:./data/demo
 - spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 - spring.datasource.driverClassName = org.h2.Driver
