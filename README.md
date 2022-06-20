@@ -21,9 +21,9 @@ For example, the API should be able to handle the following search requests:
 ## Project Specifications :
 This is a Spring Boot application and we have implemented a web service that has endpoints to perform CRUD operations on recipes and also have advanced search capabilities.
 
-### Note: For the advanced search Querydsl or @Query annotation with native SQL queries can be also used. We are currently leveraging Specifications along with Spring Data JpaSpecificationExecutor for our criteria based search.
+## Note: For the advanced search Querydsl or @Query annotation with native SQL queries can be also used. We are currently leveraging Specifications along with Spring Data JpaSpecificationExecutor for our criteria based search.
 
-# System Design:
+## System Design:
 Recipe Management Service is microservice based on layered architecture and is a RESTful Web Service. This service can be deployed independently on premise or on cloud and can also be containerized to execute as docker containers. There are 4 layers from top to bottom:
 
 ## API Layer:
@@ -44,7 +44,7 @@ This layer contains recipe entity classes and JPA repositories which implement l
 This layer is responsible for physically storing the recipes data onto database table, we use in memory H2 database.
 
 
-# Executing the project :
+## Executing the project :
 
 To execute, please download the zip of the project or clone the repository.
 
@@ -99,6 +99,61 @@ Application is using in memory H2 database. The connection details are :
 		'/api/v1/recipe/{id}'
 
 ```
+
+
+- Create Recipe
+	- Create recipe service is used to create new recipe. Following is the api url and sample json. It is POST request which accepts JSON body for recipe.
+
+```
+		POST 
+		'Content-Type: application/json'
+		'/api/v1/recipe/'
+		
+		'Accept: application/json' -d 
+		'{ \ 
+		   "cookingInstruction": "string", \ 
+		   "ingredients": [ \ 
+		     { \ 
+		       "ingredientDesciption": "string", \ 
+		       "ingredientName": "string" \ 
+		     } \ 
+		   ], \ 
+		   "name": "string", \ 
+		   "numberOfPerson": 0, \ 
+		   "vegetarian": true \ 
+		}' 
+		
+	
+```
+- Update Recipe
+	- Update recipe service is used to update existing recipe. Following is the api url and sample json. It is PUT request which accept JSON body for recipe alongwith ID as path parameter. 
+	
+```
+		PUT 
+		'Content-Type: application/json' 
+		'/api/v1/recipe/{id}'
+		
+		'Accept: application/json' -d 
+		'{ \ 
+		   "id": 5, \ 
+		   "name": "string test", \ 
+		   "createDate": "2020-10-26 13:26", \ 
+		   "numberOfPerson": 0, \ 
+		   "cookingInstruction": "string", \ 
+		   "ingredients": [ \ 
+		     { \ 
+		       "id": 10, \ 
+		       "ingredientName": "string", \ 
+		       "ingredientDesciption": "string" \ 
+		     } \ 
+		   ], \ 
+		   "vegetarian": true \ 
+		}'	 
+		
+
+```
+
+
 		
 - Search Recipe By Criteria
 	- This method searches for the recipe that matches the given search criteria. User can search by any field of the Recipe. Following are the fields of the recipe.
@@ -118,3 +173,8 @@ Application is using in memory H2 database. The connection details are :
 ```
 
 
+## Limitations:
+
+Security is not implemented, we can implement Security using Spring Security, etc.
+
+Code coverage is not considered for model classes.
